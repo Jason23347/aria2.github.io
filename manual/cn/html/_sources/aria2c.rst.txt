@@ -1,49 +1,45 @@
 aria2c(1)
 =========
 
-SYNOPSIS
+概要
 --------
 **aria2c** [<OPTIONS>] [<URI>|<MAGNET>|<TORRENT_FILE>|<METALINK_FILE>] ...
 
-DESCRIPTION
+描述
 -----------
 
-aria2 is a utility for downloading files. The supported protocols are
-HTTP(S), FTP, SFTP, BitTorrent, and Metalink. aria2 can download a
-file from multiple sources/protocols and tries to utilize your maximum
-download bandwidth. It supports downloading a file from HTTP(S)/FTP
-/SFTP and BitTorrent at the same time, while the data downloaded from
-HTTP(S)/FTP/SFTP is uploaded to the BitTorrent swarm. Using Metalink
-chunk checksums, aria2 automatically validates chunks of data while
-downloading a file.
+aria2 是用于下载文件的工具，
+支持 HTTP(S)、FTP、SFTP、BitTorrent、Metalink 等协议。
+aria2 可以从多源使用多协议下载同一文件，使你的带宽得到最大化的利用。
+它支持 HTTP(S)/FTP/SFTP 和 BitTorrent 同时下载文件，
+同时将从 HTTP(S)/FTP/SFTP 下载的文件上传至 BitTorrent 群。
+aria2 在下载文件时使用 Metalink 块校验和自动校验数据块。
 
-OPTIONS
+选项
 -------
 
 .. note::
 
-  Most FTP related options are applicable to SFTP as well.
-  Some options are not effective against SFTP (e.g., :option:`--ftp-pasv`)
+  大多数与 FTP 有关的选项对 SFTP 依然有效。
+  有些选项则对 SFTP 无效 (例如 :option:`--ftp-pasv`)
 
-Basic Options
+基本选项
 ~~~~~~~~~~~~~
 .. option:: -d, --dir=<DIR>
 
-  The directory to store the downloaded file.
+  存储下载文件的路径。
 
 .. option:: -i, --input-file=<FILE>
 
-  Downloads the URIs listed in ``FILE``. You can specify multiple sources for a
-  single entity by putting multiple URIs on a single line separated by the
-  :kbd:`TAB` character.
-  Additionally, options can be specified after each URI line. Option lines
-  must start with one or more white space characters (:kbd:`SPACE` or :kbd:`TAB`)
-  and must only contain one option per line.
-  Input files can use gzip compression.
-  When ``FILE`` is specified as ``-``, aria2 will read the input from ``stdin``.
-  See the `Input File`_ subsection for details.
-  See also the :option:`--deferred-input` option.
-  See also the :option:`--save-session` option.
+  下载 ``FILE`` 中列举的文件。您可以将多个 URI 放在由 :kbd:`TAB` 分隔
+  的单独一行上为单个实体指定多个下载源。
+  另外，每个 URI 行下面可以指定选项。选项行必须以一个或多个空白字符
+  （:kbd:`SPACE` or :kbd:`TAB`）开头，并且每行必须有且仅有一个选项。
+  gzip压缩文件可以作为输入文件。
+  当 ``FILE`` 被指定为 ``-`` 时, aria2 将从 ``stdin`` 读取输入数据。
+  详情参见 `Input File`_ 小节。
+  另请参阅 :option:`--deferred-input` 选项。
+  另请参阅 :option:`--save-session` 选项。
 
 .. option:: -l, --log=<LOG>
 
