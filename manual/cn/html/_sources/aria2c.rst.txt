@@ -43,48 +43,40 @@ aria2 在下载文件时使用 Metalink 块校验和自动校验数据块。
 
 .. option:: -l, --log=<LOG>
 
-  The file name of the log file. If ``-`` is specified, log is written to
-  ``stdout``. If empty string("") is specified, or this option is omitted,
-  no log is written to disk at all.
+  指定日志文件名。 如果被指定为 ``-`` ，则输出日志到 ``stdout``。
+  如果置空或未设置本选项，就没有日志输出到存储设备。
 
 .. option:: -j, --max-concurrent-downloads=<N>
 
-  Set the maximum number of parallel downloads for every queue item.
-  See also the :option:`--split <-s>` option.
-  Default: ``5``
+  为每个队列项设置并行下载数最大值。
+  另请参阅 :option:`--split <-s>` 选项。
+  默认值: ``5``
 
   .. note::
 
-     :option:`--max-concurrent-downloads` limits the number of items
-     which are downloaded concurrently.  :option:`--split <-s>` and
-     :option:`--min-split-size <-k>` affect the number of connections
-     inside each item.  Imagine that you have an input file (see
-     :option:`--input-file <-i>` option) like this:
+     :option:`--max-concurrent-downloads` 限制了同时下载的项目数。
+     :option:`--split <-s>` 与 :option:`--min-split-size <-k>`
+     影响单个项目内部的连接数。试想您有一个输入文件（参阅
+     :option:`--input-file <-i>`选项)如下所示：
 
      .. code-block:: text
 
 	http://example.com/foo
 	http://example.com/bar
 
-     Here is 2 download items.  aria2 can download these items
-     concurrently if the value more than or equal 2 is given to
-     :option:`--max-concurrent-downloads`.  In each download item, you
-     can configure the number of connections using :option:`--split
-     <-s>` and/or :option:`--min-split-size <-k>`, etc.
+     此处有两个下载项。如果 :option:`--max-concurrent-downloads` 的值被设为
+     大于等于 2 的数，aria2 可以同时下载这两个项目。
+     在每个下载项里，您可以使用 :option:`--split <-s>` 和/或
+     :option:`--min-split-size <-k>` 等来配置连接数。
 
 .. option:: -V, --check-integrity [true|false]
 
-  Check file integrity by validating piece hashes or a hash of entire
-  file.  This option has effect only in BitTorrent, Metalink downloads
-  with checksums or HTTP(S)/FTP downloads with
-  :option:`--checksum` option.  If
-  piece hashes are provided, this option can detect damaged portions
-  of a file and re-download them.  If a hash of entire file is
-  provided, hash check is only done when file has been already
-  download. This is determined by file length. If hash check fails,
-  file is re-downloaded from scratch.  If both piece hashes and a hash
-  of entire file are provided, only piece hashes are used. Default:
-  ``false``
+  使用块哈希或整个文件的哈希值来检查文件完整性。
+  本选项仅对BitTorrent, 带有校验和的 Metalink 下载或:option:`--checksum`
+  选项的 HTTP(S)/FTP 下载有效。如果提供了块哈希值，本选项可以检测文件受损部分
+  并重新下载。如果提供了整个文件的哈希值，哈希检查将仅在文件下载完全时进行。
+  这是由文件长度决定的。如果哈希检查失败，文件将从头开始重新下载。
+  如果同时提供块散列和整个文件的散列，则只使用块散列。 默认值：``false``
 
 .. option:: -c, --continue [true|false]
 
