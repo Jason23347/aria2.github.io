@@ -80,54 +80,46 @@ aria2 在下载文件时使用 Metalink 块校验和自动校验数据块。
 
 .. option:: -c, --continue [true|false]
 
-   Continue downloading a partially downloaded file.
-   Use this option to resume a download started by a web browser or another
-   program which downloads files sequentially from the beginning.
-   Currently this option is only applicable to HTTP(S)/FTP downloads.
+   继续下载已经下载一部分的文件。
+   使用该选项以恢复由网络浏览器或另一个从头开始顺序下载文件的程序启动的下载。
+   目前该选项仅支持 HTTP(S)/FTP 下载.
 
 .. option:: -h, --help[=<TAG>|<KEYWORD>]
 
-   The help messages are classified with tags. A tag starts with
-   ``#``. For example, type ``--help=#http`` to get the usage for the
-   options tagged with ``#http``. If non-tag word is given, print the
-   usage for the options whose name includes that word.  Available
-   Values: ``#basic``, ``#advanced``, ``#http``, ``#https``, ``#ftp``,
+   帮助信息按标签分类，其中标签以``#``开头。例如，键入``--help=#http``来获取
+   被标记为的``#http``选项的用法。如果给出非标签词，则打印名称中包含该词的选项的用法。
+   可选值：``#basic``, ``#advanced``, ``#http``, ``#https``, ``#ftp``,
    ``#metalink``, ``#bittorrent``, ``#cookie``, ``#hook``, ``#file``, ``#rpc``,
    ``#checksum``, ``#experimental``, ``#deprecated``, ``#help``, ``#all``
-   Default: ``#basic``
+   默认值: ``#basic``
 
-HTTP/FTP/SFTP Options
+HTTP/FTP/SFTP 选项
 ~~~~~~~~~~~~~~~~~~~~~
 
 .. option:: --all-proxy=<PROXY>
 
-  Use a proxy server for all protocols.  To override a previously
-  defined proxy, use "".  You also can override this setting and specify a
-  proxy server for a particular protocol using :option:`--http-proxy`,
-  :option:`--https-proxy` and :option:`--ftp-proxy` options.  This affects all
-  downloads.
-  The format of PROXY is ``[http://][USER:PASSWORD@]HOST[:PORT]``.
-  See also `ENVIRONMENT`_ section.
+  为所有协议指定代理服务器。使用 "" 以覆盖预先定义的代理。您也可以使用 :option:`--http-proxy`、
+  :option:`--https-proxy` 和 :option:`--ftp-proxy` 选项为一个特定的协议覆盖本设置
+  并指定一个代理服务器。这将影响所有下载。
+  代理格式为 ``[http://][USER:PASSWORD@]HOST[:PORT]``.
+  另请参阅 `ENVIRONMENT`_ 小节.
 
   .. note::
 
-    If user and password are embedded in proxy URI and they are also
-    specified by *--{http,https,ftp,all}-proxy-{user,passwd}* options,
-    those specified later override prior options. For example, if you specified
-    ``http-proxy-user=myname``, ``http-proxy-passwd=mypass`` in aria2.conf and
-    you specified ``--http-proxy="http://proxy"`` on the command-line, then
-    you'd get HTTP proxy ``http://proxy`` with user ``myname`` and password
-    ``mypass``.
+    如果代理服务器的用户名和密码嵌入到代理的URI中，并且他们也被
+    *--{http,https,ftp,all}-proxy-{user,passwd}* 选项所指定，
+    则稍后指定的那些将覆盖先前的选项。例如，如果您在aria2.conf中指定了
+    ``http-proxy-user=myname``， ``http-proxy-passwd=mypass``并在命令行里指定了
+    ``--http-proxy="http://proxy"``，则您会得到具有用户名``myname``和密码``mypass``
+    的HTTP代理``http://proxy``。
 
-    Another example: if you specified on the command-line
-    ``--http-proxy="http://user:pass@proxy" --http-proxy-user="myname"
-    --http-proxy-passwd="mypass"``, then you'd get HTTP proxy
-    ``http://proxy`` with user ``myname`` and password ``mypass``.
+    另一个栗子：如果您在命令行里指定了``--http-proxy="http://user:pass@proxy"
+    --http-proxy-user="myname" --http-proxy-passwd="mypass"``，
+    则您会得到具有用户名``myname``和密码``mypass``HTTP代理``http://proxy``。
 
-    One more example: if you specified in command-line ``--http-proxy-user="myname"
-    --http-proxy-passwd="mypass" --http-proxy="http://user:pass@proxy"``,
-    then you'd get HTTP proxy ``http://proxy`` with user ``user`` and password
-    ``pass``.
+    另另一个栗子: 如果您在命令行里指定了``--http-proxy-user="myname"
+    --http-proxy-passwd="mypass" --http-proxy="http://user:pass@proxy"``，
+    则您会得到具有用户名``user``和密码``pass``HTTP代理``http://proxy``。
 
 .. option:: --all-proxy-passwd=<PASSWD>
 
