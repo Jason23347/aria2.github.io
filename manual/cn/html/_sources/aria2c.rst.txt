@@ -123,47 +123,43 @@ HTTP/FTP/SFTP 选项
 
 .. option:: --all-proxy-passwd=<PASSWD>
 
-  Set password for :option:`--all-proxy` option.
+  为 :option:`--all-proxy` 选项设置密码。
 
 .. option:: --all-proxy-user=<USER>
 
-  Set user for :option:`--all-proxy` option.
+  为 :option:`--all-proxy` 选项设置用户名。
 
 .. option:: --checksum=<TYPE>=<DIGEST>
 
-  Set checksum. TYPE is hash type. The supported hash type is listed
-  in ``Hash Algorithms`` in ``aria2c -v``. DIGEST is hex digest.  For
-  example, setting sha-1 digest looks like this:
-  ``sha-1=0192ba11326fe2298c8cb4de616f4d4140213838`` This option applies
-  only to HTTP(S)/FTP downloads.
+  设置文件校验和。 TYPE为哈希类型。 支持的哈希类型在 ``aria2c -v`` 的 ``Hash Algorithms``
+  种列出。 DIGEST 为16进制摘要。举个例子，设置 sha-1 算法的摘要如下所示：
+  ``sha-1=0192ba11326fe2298c8cb4de616f4d4140213838``。本选项仅对 HTTP(S)/FTP 下载有效。
 
 .. option:: --connect-timeout=<SEC>
 
-  Set the connect timeout in seconds to establish connection to
-  HTTP/FTP/proxy server. After the connection is established, this
-  option makes no effect and :option:`--timeout <-t>` option is used instead.
-  Default: ``60``
+  以秒为单位设置 HTTP/FTP/proxy 服务器的连接建立超时时间。
+  在连接建立之后，这个选项不再有效，而使用 :option:`--timeout <-t>`
+  选项作为替代。
+  默认值： ``60``
 
 .. option:: --dry-run [true|false]
 
-  If ``true`` is given, aria2 just checks whether the remote file is
-  available and doesn't download data. This option has effect on
-  HTTP/FTP download.  BitTorrent downloads are canceled if ``true`` is
-  specified.  Default: ``false``
+  如果置为 ``true``， aria2 将仅仅检查远程文件是否可访问并不下载数据。
+  本选项 影响 HTTP/FTP 下载。 对于 BitTorrent，当本选项为 ``true`` 时下载将被取消。
+  默认值： ``false``
 
 .. option:: --lowest-speed-limit=<SPEED>
 
-  Close connection if download speed is lower than or equal to this
-  value(bytes per sec).
-  ``0`` means aria2 does not have a lowest speed limit.
-  You can append ``K`` or ``M`` (1K = 1024, 1M = 1024K).
-  This option does not affect BitTorrent downloads.
-  Default: ``0``
+  当下载速度小于等于该值时（字节bytes每秒）关闭连接。
+  ``0`` 意味着 aria2 没有最低速度限制。
+  您可以在数字结尾附加 ``K`` 或者 ``M`` (1K = 1024, 1M = 1024K).
+  本选项不对 BitTorrent 下载造成影响。
+  默认值： ``0``
 
 .. option:: -x, --max-connection-per-server=<NUM>
 
-  The maximum number of connections to one server for each download.
-  Default: ``1``
+  单个下载的一个服务器的连接数最大值。
+  默认值： ``1``
 
 .. option:: --max-file-not-found=<NUM>
 
