@@ -163,30 +163,26 @@ HTTP/FTP/SFTP 选项
 
 .. option:: --max-file-not-found=<NUM>
 
-  If aria2 receives "file not found" status from the remote HTTP/FTP
-  servers NUM times without getting a single byte, then force the
-  download to fail. Specify ``0`` to disable this option. This options
-  is effective only when using HTTP/FTP servers.  The number of retry
-  attempt is counted toward :option:`--max-tries`, so it should be
-  configured too.
+  如果 aria2 从远程HTTP/FTP服务器接收到 “未找到文件”状态 NUM 次且没有获取到任何字节，
+  则强制下载失败。指定 ``0`` 来禁止本选项。本选项仅对 HTTP/FTP 有效。
+  重试次数通过 `--max-tries` 记录，所以那个选项也应该被指定。
 
-  Default: ``0``
+  默认值： ``0``
 
 .. option:: -m, --max-tries=<N>
 
-  Set number of tries. ``0`` means unlimited.
-  See also :option:`--retry-wait`.
-  Default: ``5``
+  设置尝试次数。 ``0`` 代表无限制。
+  另请参阅 :option:`--retry-wait`。
+  默认值： ``5``
 
 .. option:: -k, --min-split-size=<SIZE>
 
-  aria2 does not split less than 2*SIZE byte range.  For example,
-  let's consider downloading 20MiB file. If SIZE is 10M, aria2 can
-  split file into 2 range [0-10MiB) and [10MiB-20MiB) and download it
-  using 2 sources(if :option:`--split <-s>` >= 2, of course).  If SIZE is 15M,
-  since 2*15M > 20MiB, aria2 does not split file and download it using
-  1 source.  You can append ``K`` or ``M`` (1K = 1024, 1M = 1024K).
-  Possible Values: ``1M`` -``1024M`` Default: ``20M``
+  aria2 不分割比2*SIZE字节小的区间。例如，我们正要下载一个20MiB的文件。
+  如果SIZE为 10M， aria2 可以将文件分割为两个区间：[0-10MiB) 和 [10MiB-20MiB) 并从两个源下载。
+  （当然是在 :option:`--split <-s>` >= 2 情况下）如果SIZE为15M，
+  既然 2*15M > 20MiB, aria2 不会将文件分割为区间并只从一个源开始下载。
+  你可以在SIZE末尾附加 ``K`` 或者 ``M`` (1K = 1024, 1M = 1024K).
+  可行的值： ``1M`` -``1024M`` 默认值： ``20M``
 
 
 .. option:: --netrc-path=<FILE>
