@@ -187,39 +187,35 @@ HTTP/FTP/SFTP 选项
 
 .. option:: --netrc-path=<FILE>
 
-   Specify the path to the netrc file.
-   Default: ``$(HOME)/.netrc``
+   指定 netrc 文件路径.
+   默认值： ``$(HOME)/.netrc``
 
    .. note::
 
-       Permission of the .netrc file must be 600.  Otherwise, the file
-       will be ignored.
+       .netrc 文件的权限必须是 600。 如果不是，该文件将被忽略。
 
 .. option:: -n, --no-netrc [true|false]
 
-  Disables netrc support. netrc support is enabled by default.
+  禁用 netrc 支持。 netrc 支持默认开启。
 
   .. note::
 
-    netrc file is only read at the startup if
-    :option:`--no-netrc <-n>` is ``false``.
-    So if :option:`--no-netrc <-n>` is ``true`` at the startup,
-    no netrc is available throughout the session.
-    You cannot get netrc enabled even if you send
-    :option:`--no-netrc=false <-n>` using
-    :func:`aria2.changeGlobalOption`.
+    如果 :option:`--no-netrc <-n>` 为 ``false``，则 netrc 文件仅在启动时被读取。
+    所以如果启动时 :option:`--no-netrc <-n>` 为 ``true``，
+    整场会话将没有 netrc 可用。
+    您甚至不能启用 netrc 通过 :func:`aria2.changeGlobalOption`
+    修改 :option:`--no-netrc=false <-n>`。
 
 .. option:: --no-proxy=<DOMAINS>
 
-  Specify a comma separated list of host names, domains and network addresses
-  with or without a subnet mask where no proxy should be used.
+  指定一个以逗号分隔的主机名、域名和网络地址的列表，
+  和是否有子网掩码的地方不应使用代理。
 
   .. note::
 
-    For network addresses with a subnet mask, both IPv4 and IPv6 addresses work.
-    The current implementation does not resolve the host name in an URI to compare
-    network addresses specified in :option:`--no-proxy`. So it is only effective
-    if URI has numeric IP addresses.
+    对于有子网掩码的网络地址，IPv4 和 IPv6 地址都可以使用。
+    目前的实现并不解析URI中的主机名，以和选项：`--no-proxy`中指定的网络地址比较。
+    所以它只在URI有数字类型的IP地址时有效。
 
 .. option:: -o, --out=<FILE>
 
