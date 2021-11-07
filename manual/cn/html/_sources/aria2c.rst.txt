@@ -219,19 +219,17 @@ HTTP/FTP/SFTP 选项
 
 .. option:: -o, --out=<FILE>
 
-  The file name of the downloaded file.  It is always relative to the
-  directory given in :option:`--dir <-d>` option.  When the
-  :option:`--force-sequential <-Z>` option is used, this option is
-  ignored.
+  下载文件名，为 :option:`--dir <-d>` 所提供的路径的相对路径。
+  当使用 :option:`--force-sequential <-Z>` 选项时，本选项自动被忽略。
 
   .. note::
 
-    You cannot specify a file name for Metalink or BitTorrent downloads.
-    The file name specified here is only used when the URIs fed to aria2
-    are given on the command line directly, but not when using
-    :option:`--input-file <-i>`, :option:`--force-sequential <-Z>` option.
+    您不能为 Metalink 或 BitTorrent 下载指定文件名。
+    这里指定的文件名当且仅当给到 aria2 的 URI 从命令行直接指定的，
+    而使用 :option:`--input-file <-i>`, :option:`--force-sequential <-Z>`
+    选项时本选项则不生效。
 
-    Example:
+    例子：
 
     .. code-block:: console
 
@@ -239,27 +237,24 @@ HTTP/FTP/SFTP 选项
 
 .. option:: --proxy-method=<METHOD>
 
-  Set the method to use in proxy request.  METHOD is either ``get`` or
-  ``tunnel``. HTTPS downloads always use ``tunnel`` regardless of this
-  option.
-  Default: ``get``
+  设置proxy请求中所使用的方法。METHOD 为 ``get`` 或 ``tunnel``。
+  不论本选项怎样设置，HTTPS 都将使用 ``tunnel``。
+  默认值： ``get``
 
 .. option:: -R, --remote-time [true|false]
 
-  Retrieve timestamp of the remote file from the remote HTTP/FTP
-  server and if it is available, apply it to the local file.
-  Default: ``false``
+  从远程 HTTP/FTP 服务器上检索远程文件的时间戳，如果有的话，将其应用于本地文件。
+  默认值： ``false``
 
 .. option:: --reuse-uri [true|false]
 
-  Reuse already used URIs if no unused URIs are left.
-  Default: ``true``
+  如果没有未使用的 URI，则重新使用已经使用的URI。
+  默认值： ``true``
 
 .. option:: --retry-wait=<SEC>
 
-  Set the seconds to wait between retries. When ``SEC > 0``, aria2 will
-  retry downloads when the HTTP server returns a 503 response. Default:
-  ``0``
+  设置重试间隔时间。 当 ``SEC > 0`` 时， aria2 将在 HTTP 返回 503 响应时重试下载。
+  默认值： ``0``
 
 .. option:: --server-stat-of=<FILE>
 
