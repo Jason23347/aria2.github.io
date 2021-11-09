@@ -258,42 +258,37 @@ HTTP/FTP/SFTP 选项
 
 .. option:: --server-stat-of=<FILE>
 
-  Specify the file name to which performance profile of the servers is
-  saved. You can load saved data using :option:`--server-stat-if` option. See
-  `Server Performance Profile`_
-  subsection below for file format.
+  指定保存服务器性能简介的文件名。你可以使用
+  :option:`--server-stat-if` 选项加载保存的数据。
+  文件格式见下面的“服务器性能简介”小节。
 
 .. option:: --server-stat-if=<FILE>
 
-  Specify the file name to load performance profile of the servers. The
-  loaded data will be used in some URI selector such as ``feedback``.
-  See also :option:`--uri-selector` option. See
-  `Server Performance Profile`_
-  subsection below for file format.
+  指定文件名来加载服务器的性能概况。
+  加载的数据将用于一些URI选择器，如``feedback'`，
+  参见 :option:`--uri-selector`选项。
+  文件格式见下面的 "服务器性能简介 "小节。
 
 .. option:: --server-stat-timeout=<SEC>
 
-  Specifies timeout in seconds to invalidate performance profile of
-  the servers since the last contact to them.
-  Default: ``86400`` (24hours)
+  指定以秒为单位的超时时间，以使服务器自上次联系以来的性能配置文件失效。
+  默认值： ``86400`` (24hours)
 
 .. option:: -s, --split=<N>
 
-  Download a file using N connections.  If more than N URIs are given,
-  first N URIs are used and remaining URIs are used for backup.  If
-  less than N URIs are given, those URIs are used more than once so
-  that N connections total are made simultaneously.  The number of
-  connections to the same host is restricted by the
-  :option:`--max-connection-per-server <-x>` option.
-  See also the :option:`--min-split-size <-k>` option.
-  Default: ``5``
+  使用N个连接下载文件。如果给定的URI多于N个，
+  则使用前N个URI，其余URI用于备份。
+  如果给定的URI少于N个，则这些URI会使用不止一次，
+  以便同时进行N个连接。到同一主机的连接数受该
+  :option:`--max-connection-per-server <-x>`选项限制 。
+  另请参阅:option:`--min-split-size <-k>`选项。
+  默认值：``5``
 
   .. note::
 
-    Some Metalinks regulate the number of servers to connect.  aria2
-    strictly respects them.  This means that if Metalink defines the
-    ``maxconnections`` attribute lower than N, then aria2 uses the
-    value of this lower value instead of N.
+    一些Metalinks规定了连接的服务器数量，aria2将严格遵循其规则。
+    这意味着，如果Metalink定义的``maxconnections``属性小于N，
+    则aria2使用此较低值的值代替N。
 
 .. option:: --stream-piece-selector=<SELECTOR>
 
