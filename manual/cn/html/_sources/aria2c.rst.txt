@@ -292,34 +292,25 @@ HTTP/FTP/SFTP 选项
 
 .. option:: --stream-piece-selector=<SELECTOR>
 
-  Specify piece selection algorithm used in HTTP/FTP download. Piece
-  means fixed length segment which is downloaded in parallel in
-  segmented download. If ``default`` is given, aria2 selects piece so
-  that it reduces the number of establishing connection. This is
-  reasonable default behavior because establishing connection is an
-  expensive operation.  If ``inorder`` is given, aria2 selects piece
-  which has minimum index. Index=0 means first of the file. This will
-  be useful to view movie while downloading it.
-  :option:`--enable-http-pipelining` option may
-  be useful to reduce re-connection overhead.  Please note that aria2
-  honors
-  :option:`--min-split-size <-k>` option,
-  so it will be necessary to specify a reasonable value to
-  :option:`--min-split-size <-k>` option.
-  If ``random`` is given, aria2 selects piece randomly. Like
-  ``inorder``, :option:`--min-split-size <-k>` option is honored.
-  If ``geom`` is given, at the beginning aria2 selects piece which has
-  minimum index like ``inorder``, but it exponentially increasingly
-  keeps space from previously selected piece. This will reduce the
-  number of establishing connection and at the same time it will
-  download the beginning part of the file first. This will be useful
-  to view movie while downloading it.
-  Default: ``default``
+  指定HTTP / FTP下载中使用的片段选择算法。
+  片段是指在分段下载中并行下载的固定长度段。
+  如果给定default，aria2将选择块以减少连接建立次数。
+  这是合理的默认行为，因为建立连接是一项开销昂贵的操作。
+  如果给定inorder，aria2将选择具有最小索引的片段。Index = 0 表示文件的第一位。
+  这对于在边下载电影时边观看电影很有用。
+  :option:`--enable-http-pipelining` 选项可能有助于减少重新连接的开销。
+  请注意，aria2 重视 :option:`--min-split-size <-k>` 选项，因此有必要为该
+  选项指定一个合理的值。如果给定random，aria2将随机选择一块。
+  像inorder一样，--min-split-size选项很受重视。如果geom给定后，
+  aria2开始选择具有最小索引的片段，例如inorder，但是它与以前选择的片段成指数增长。
+  这将减少建立连接的次数，同时它将首先下载文件的开始部分。
+  这对于在下载电影时观看电影很有用。
+  默认值：default
 
 .. option:: -t, --timeout=<SEC>
 
-  Set timeout in seconds.
-  Default: ``60``
+  设置以秒为单位的超时时间.
+  默认值： ``60``
 
 .. option:: --uri-selector=<SELECTOR>
 
