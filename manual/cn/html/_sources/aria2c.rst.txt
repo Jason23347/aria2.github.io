@@ -314,20 +314,16 @@ HTTP/FTP/SFTP 选项
 
 .. option:: --uri-selector=<SELECTOR>
 
-  Specify URI selection algorithm. The possible values are ``inorder``,
-  ``feedback`` and ``adaptive``.  If ``inorder`` is given, URI is tried in
-  the order appeared in the URI list.  If ``feedback`` is given, aria2
-  uses download speed observed in the previous downloads and choose
-  fastest server in the URI list. This also effectively skips dead
-  mirrors. The observed download speed is a part of performance
-  profile of servers mentioned in :option:`--server-stat-of` and
-  :option:`--server-stat-if` options.  If ``adaptive`` is given, selects one of
-  the best mirrors for the first and reserved connections.  For
-  supplementary ones, it returns mirrors which has not been tested
-  yet, and if each of them has already been tested, returns mirrors
-  which has to be tested again. Otherwise, it doesn't select anymore
-  mirrors. Like ``feedback``, it uses a performance profile of servers.
-  Default: ``feedback``
+  指定URI选择算法。可能的值是 ``inorder``，``feedback``和``adaptive``。
+  如果给定``inorder``，则按URI列表中出现顺序尝试URI。
+  如果给定``feedback``，aria2将使用先前下载中观察到的下载速度，
+  并在URI列表中选择最快的服务器。这也有效地跳过了无法连接的镜像。
+  观察到的下载速度是``--server-stat-of``和``--server-stat-if``选项中提到的服务器性能的一部分。
+  如果给出``adaptive``，则为第一个和保留的连接选择最佳的镜像之一。
+  对于补充的镜像，将返回尚未测试的镜像。如果每个镜像都已经被测试，
+  则返回必须再次测试的镜像，否则，它将不再选择镜像。
+  与``feedback``类似，服务器的性能配置文件将被使用。
+  默认值：feedback
 
 HTTP Specific Options
 ~~~~~~~~~~~~~~~~~~~~~
