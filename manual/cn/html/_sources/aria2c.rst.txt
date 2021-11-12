@@ -329,47 +329,35 @@ HTTP Specific Options
 ~~~~~~~~~~~~~~~~~~~~~
 .. option:: --ca-certificate=<FILE>
 
-  Use the certificate authorities in FILE to verify the peers.
-  The certificate file must be in PEM format and can contain multiple CA
-  certificates.
-  Use :option:`--check-certificate` option to enable verification.
+  使用FILE中的证书颁发机构来验证对等方。证书文件必须为PEM格式，
+  并且可以包含多个CA证书。使用 :option:`--check-certificate` 选项启用验证。
 
   .. note::
 
-    If you build with OpenSSL or the recent version of GnuTLS which
-    has ``gnutls_certificate_set_x509_system_trust()`` function and
-    the library is properly configured to locate the system-wide CA
-    certificates store, aria2 will automatically load those
-    certificates at the startup.
+    如果您使用OpenSSL或具有 ``gnutls_certificate_set_x509_system_trust()``
+    功能的最新版本的GnuTLS进行构建，并且已正确配置该库以定位系统范围内的CA证书存储，
+    则aria2将在启动时自动加载这些证书。
 
   .. note::
 
-    *WinTLS* and *AppleTLS* do not support this option. Instead you will
-    have to import the certificate into the OS trust store.
+    *WinTLS* 和 *AppleTLS* 不支持此选项。相反，您必须先将证书导入OS信任库。
 
 .. option:: --certificate=<FILE>
 
-  Use the client certificate in FILE. The certificate must be
-  either in PKCS12 (.p12, .pfx) or in PEM format.
+  在FILE中使用客户端证书。证书必须为PKCS12 (.p12, .pfx) 或PEM格式。
 
-  PKCS12 files must contain the certificate, a key and optionally a chain
-  of additional certificates. Only PKCS12 files with a blank import password
-  can be opened!
+  PKCS12文件必须包含证书，密钥以及可选的其他证书链。只能打开导入密码为空的PKCS12文件！
 
-  When using PEM, you have to specify the private key via :option:`--private-key`
-  as well.
+  使用PEM时，还必须通过 :option:`--private-key` 指定私钥。
 
   .. note::
-    *WinTLS* does not support PEM files at the moment. Users have to use PKCS12
-    files.
+    *WinTLS* 目前不支持PEM文件。用户必须使用PKCS12文件。
 
   .. note::
-    *AppleTLS* users should use the KeyChain Access utility to import the client
-    certificate and get the SHA-1 fingerprint from the Information dialog
-    corresponding to that certificate.
-    To start aria2c use `--certificate=<SHA-1>`.
-    Alternatively PKCS12 files are also supported. PEM files, however, are not
-    supported.
+    *AppleTLS* 用户应使用KeyChain Access实用程序导入客户端证书，
+    并从与该证书相对应的“信息”对话框中获取SHA-1指纹。
+    要启动aria2c，请使用 `--certificate=<SHA-1>`。
+    另外，本选项也支持PKCS12文件,但是不支持PEM文件。
 
 .. option:: --check-certificate [true|false]
 
