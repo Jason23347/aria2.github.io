@@ -361,28 +361,25 @@ HTTP Specific Options
 
 .. option:: --check-certificate [true|false]
 
-  Verify the peer using certificates specified in :option:`--ca-certificate` option.
-  Default: ``true``
+  使用 :option:`--ca-certificate` 中指定的证书验证对等方。
+  默认值： ``true``
 
 .. option:: --http-accept-gzip [true|false]
 
-  Send ``Accept: deflate, gzip`` request header and inflate response if
-  remote server responds with ``Content-Encoding: gzip`` or
-  ``Content-Encoding: deflate``.  Default: ``false``
+  如果远程服务器使用 ``Content-Encoding: gzip`` 或 ``Content-Encoding: deflate`` 响应，
+  则发送 ``Accept: deflate, gzip``  请求标头并增加响应。
+  默认值： ``false``
 
   .. note::
 
-    Some server responds with ``Content-Encoding: gzip`` for files which
-    itself is gzipped file. aria2 inflates them anyway because of the
-    response header.
+    某些服务器对本身是压缩文件的文件进行 ``Content-Encoding: gzip``  响应。
+    aria2仍会因响应标头而解压它们。
 
 .. option:: --http-auth-challenge [true|false]
 
-  Send HTTP authorization header only when it is requested by the
-  server. If ``false`` is set, then authorization header is always sent
-  to the server.  There is an exception: if user name and password are
-  embedded in URI, authorization header is always sent to the server
-  regardless of this option.  Default: ``false``
+  仅在服务器要求授权时发送HTTP授权请求头。如果置否，则授权标头始终发送到服务器。
+  有一个例外：如果用户名和密码嵌入在URI中，则无论此选项如何，授权标头始终发送到服务器。
+  默认值： ``false``
 
 .. option:: --http-no-cache [true|false]
 
