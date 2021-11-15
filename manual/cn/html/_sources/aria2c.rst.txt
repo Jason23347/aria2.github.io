@@ -383,33 +383,31 @@ HTTP Specific Options
 
 .. option:: --http-no-cache [true|false]
 
-   Send ``Cache-Control: no-cache`` and ``Pragma: no-cache`` header to avoid
-   cached content.  If ``false`` is given, these headers are not sent
-   and you can add Cache-Control header with a directive you like
-   using :option:`--header` option. Default: ``false``
+  发送 ``Cache-Control: no-cache`` 和 ``Pragma: no-cache`` 标头可避免缓存内容。
+  如果置 ``false``，则不发送这些标头，您可以使用喜欢的选项添加Cache-Control标头。
+  默认值：``false``
 
 .. option:: --http-user=<USER>
 
-  Set HTTP user. This affects all URIs.
+  设置 HTTP 用户. 该选项影响所有 URI。
 
 .. option:: --http-passwd=<PASSWD>
 
-  Set HTTP password. This affects all URIs.
+  设置 HTTP 密码。该选项影响所有 URI。
 
 .. option:: --http-proxy=<PROXY>
 
-  Use a proxy server for HTTP.  To override a previously defined proxy,
-  use "".
-  See also the :option:`--all-proxy` option.  This affects all http downloads.
-  The format of PROXY is ``[http://][USER:PASSWORD@]HOST[:PORT]``
+  为 HTTP 设置代理。设为 "" 可以覆盖之前定义的代理。
+  另请参阅 :option:`--all-proxy` 选项。该选项影响所有http下载。
+  PROXY 的格式为 ``[http://][USER:PASSWORD@]HOST[:PORT]``
 
 .. option:: --http-proxy-passwd=<PASSWD>
 
-  Set password for :option:`--http-proxy`.
+  为 :option:`--http-proxy` 设置密码。
 
 .. option:: --http-proxy-user=<USER>
 
-  Set user for :option:`--http-proxy`.
+  为 :option:`--http-proxy` 设置用户。
 
 .. option:: --https-proxy=<PROXY>
 
