@@ -432,25 +432,23 @@ HTTP Specific Options
 
 .. option:: --referer=<REFERER>
 
-  Set an http referrer (Referer). This affects all http/https downloads.
-  If ``*`` is given, the download URI is also used as the referrer.
-  This may be useful when used together with the
-  :option:`--parameterized-uri <-P>` option.
+  设置一个 http Referrer（Referer）。这会影响所有http/https下载。
+  如果给定为``*``，则下载URI也被用作 referrer。
+  与 :option:`--parameterized-uri <-P>` 选项一起使用时，这可能很有用 。
 
 .. option:: --enable-http-keep-alive [true|false]
 
-  Enable HTTP/1.1 persistent connection.
-  Default: ``true``
+  启用 HTTP/1.1 持久连接。
+  默认值： ``true``
 
 .. option:: --enable-http-pipelining [true|false]
 
-  Enable HTTP/1.1 pipelining.
-  Default: ``false``
+  启用 HTTP/1.1 管道。
+  默认值： ``false``
 
   .. note::
 
-    In performance perspective, there is usually no advantage to enable
-    this option.
+    从性能角度来看，启用此选项通常没有优势。
 
 .. option:: --header=<HEADER>
 
