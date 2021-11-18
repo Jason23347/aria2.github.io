@@ -452,8 +452,8 @@ HTTP Specific Options
 
 .. option:: --header=<HEADER>
 
-  Append HEADER to HTTP request header.
-  You can use this option repeatedly to specify more than one header:
+  将 HEADER 添加至 HTTP 请求头。
+  你可以使用重复本选项以指定多个请求头：
 
   .. code-block:: console
 
@@ -461,21 +461,19 @@ HTTP Specific Options
 
 .. option:: --load-cookies=<FILE>
 
-  Load Cookies from FILE using the Firefox3 format (SQLite3),
-  Chromium/Google Chrome (SQLite3) and the
-  Mozilla/Firefox(1.x/2.x)/Netscape format.
+  从 Firefox3格式 (SQLite3)，Chromium/Google Chrome (SQLite3) 和
+  Mozilla/Firefox(1.x/2.x)/Netscape 的文件 FILE 中加载 cookies。
 
   .. note::
 
-    If aria2 is built without libsqlite3, then it doesn't support Firefox3
-    and Chromium/Google Chrome cookie format.
+  如果aria2是在没有libsqlite3的情况下构建的，
+  则它不支持Firefox3和Chromium/Google Chrome cookie格式。
 
 .. option:: --save-cookies=<FILE>
 
-  Save Cookies to FILE in Mozilla/Firefox(1.x/2.x)/ Netscape
-  format. If FILE already exists, it is overwritten. Session Cookies
-  are also saved and their expiry values are treated as 0.  Possible
-  Values: ``/path/to/file``
+  以Mozilla/Firefox (1.x/2.x)/ Netscape格式将Cookies保存到FILE文件。
+  如果FILE已经存在，它将被覆盖。会话Cookie也将被保存，其有效期值将被视为0。
+  可能的值：``/path/to/file``
 
 .. option:: --use-head [true|false]
 
