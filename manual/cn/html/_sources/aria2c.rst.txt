@@ -477,30 +477,28 @@ HTTP Specific Options
 
 .. option:: --use-head [true|false]
 
-  Use HEAD method for the first request to the HTTP server.
-  Default: ``false``
+  为第一次请求HTTP服务器使用 HEAD 方法。
+  默认值： ``false``
 
 
 .. option:: -U, --user-agent=<USER_AGENT>
 
-  Set user agent for HTTP(S) downloads.
-  Default: ``aria2/$VERSION``, $VERSION is replaced by package version.
+  为 HTTP(S) 下载设置user agent。
+  默认值： ``aria2/$VERSION``, $VERSION 为包版本号。
 
 FTP/SFTP Specific Options
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 .. option:: --ftp-user=<USER>
 
-  Set FTP user. This affects all URIs.
-  Default: ``anonymous``
+  设置 FTP 用户。 本选项影响所有URI。
+  默认值： ``anonymous``
 
 .. option:: --ftp-passwd=<PASSWD>
 
-  Set FTP password. This affects all URIs.
-  If user name is embedded but password is missing in URI, aria2 tries
-  to resolve password using .netrc. If password is found in .netrc,
-  then use it as password. If not, use the password specified in this
-  option.
-  Default: ``ARIA2USER@``
+  设置 FTP 密码。 本选项影响所有URI。
+  如果嵌入了用户名，但URI中缺少密码，则aria2尝试使用.netrc文件解析密码。
+  如果在.netrc文件中找到密码，则将其用作密码。如果没有，则使用本选项中指定的密码。
+  默认值： ``ARIA2USER@``
 
 .. option:: -p, --ftp-pasv [true|false]
 
