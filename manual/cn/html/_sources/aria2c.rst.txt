@@ -502,37 +502,34 @@ FTP/SFTP Specific Options
 
 .. option:: -p, --ftp-pasv [true|false]
 
-  Use the passive mode in FTP.
-  If ``false`` is given, the active mode will be used.
-  Default: ``true``
+  在FTP中使用被动模式。如果给定``false``，将使用主动模式。
+  默认值： ``true``
 
   .. note::
 
-    This option is ignored for SFTP transfer.
+    对于SFTP传输，将忽略此选项。
 
 .. option:: --ftp-proxy=<PROXY>
 
-  Use a proxy server for FTP.  To override a previously defined proxy,
-  use "".
-  See also the :option:`--all-proxy` option.  This affects all ftp downloads.
-  The format of PROXY is ``[http://][USER:PASSWORD@]HOST[:PORT]``
+  为FTP设置代理服务器。使用""将覆盖以前定义的代理。另请参阅 :option:`--all-proxy` 选项。
+  这会影响所有ftp下载。PROXY的格式为 ``[http://][USER:PASSWORD@]HOST[:PORT]``
 
 .. option:: --ftp-proxy-passwd=<PASSWD>
 
-  Set password for :option:`--ftp-proxy` option.
+  为 :option:`--ftp-proxy` 选项设置密码。
 
 .. option:: --ftp-proxy-user=<USER>
 
-  Set user for :option:`--ftp-proxy` option.
+  为 :option:`--ftp-proxy` 选项设置用户。
 
 .. option:: --ftp-type=<TYPE>
 
-  Set FTP transfer type. TYPE is either ``binary`` or ``ascii``.
-  Default: ``binary``
+  设置FTP传输类型。TYPE可以是``binary``或``ascii``。
+  默认： ``binary``
 
   .. note::
 
-    This option is ignored for SFTP transfer.
+    对于SFTP传输，将忽略此选项。
 
 .. option:: --ftp-reuse-connection [true|false]
 
