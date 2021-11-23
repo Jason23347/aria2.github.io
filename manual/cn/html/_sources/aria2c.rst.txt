@@ -533,29 +533,24 @@ FTP/SFTP Specific Options
 
 .. option:: --ftp-reuse-connection [true|false]
 
-  Reuse connection in FTP.
-  Default: ``true``
+  在FTP中重用连接。
+  默认值： ``true``
 
 .. option:: --ssh-host-key-md=<TYPE>=<DIGEST>
 
-  Set checksum for SSH host public key. TYPE is hash type. The
-  supported hash type is ``sha-1`` or ``md5``. DIGEST is hex
-  digest. For example:
-  ``sha-1=b030503d4de4539dc7885e6f0f5e256704edf4c3``.  This option can
-  be used to validate server's public key when SFTP is used. If this
-  option is not set, which is default, no validation takes place.
+  设置 SSH host 公钥的校验和。 TYPE 为哈希类型。
+  支持的哈希类型有 ``sha-1`` 和 ``md5``。 DIGEST 为八进制数字。
+  例： ``sha-1=b030503d4de4539dc7885e6f0f5e256704edf4c3``。
+  在启用 SFTP 时 本选项可被用于校验服务器公钥。如果本选项未被设置，即缺省，则不会有校验发生。
 
 BitTorrent/Metalink Options
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. option:: --select-file=<INDEX>...
 
-  Set file to download by specifying its index.
-  You can find the file index using the :option:`--show-files <-S>` option.
-  Multiple indexes can be specified by using ``,``, for example: ``3,6``.
-  You can also use ``-`` to specify a range: ``1-5``.
-  ``,`` and ``-`` can be used together: ``1-5,8,9``.
-  When used with the -M option, index may vary depending on the query
-  (see *--metalink-\** options).
+  通过指定文件索引来设置要下载的文件。您可以使用 :option:`--show-files <-S>` 选项找到文件索引。
+  可以使用 ``,`` 来指定多个索引，例如：``3,6``。
+  您也可以使用 ``-`` 指定范围：``1-5``。 ,并且 ``-`` 可以一起使用：``1-5,8,9``。
+  当与 -M 选项一起使用时，索引可能会因查询而异（请参阅 *--metalink-\** 选项）。
 
   .. note::
 
