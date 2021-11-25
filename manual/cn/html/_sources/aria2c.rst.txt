@@ -554,29 +554,24 @@ BitTorrent/Metalink Options
 
   .. note::
 
-    In multi file torrent, the adjacent files specified by this option may
-    also be downloaded. This is by design, not a bug.
-    A single piece may include several files or part of files, and aria2
-    writes the piece to the appropriate files.
+    在多文件洪流中，也可以下载此选项指定的相邻文件。这是设计使然，而非错误。
+    单个文件可能包含多个文件或文件的一部分，aria2将文件写入适当的文件。
 
 .. option:: -S, --show-files [true|false]
 
-  Print file listing of ".torrent", ".meta4" and ".metalink" file and exit.
-  In case of ".torrent" file, additional information
-  (infohash, piece length, etc) is also printed.
+  打印“.torrent”，“.meta4”和“.metalink”文件的文件列表，然后退出。\
+  如果是“.torrent”文件，还将打印其他信息（信息哈希，片段长度等）。
 
 BitTorrent Specific Options
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. option:: --bt-detach-seed-only [true|false]
 
-  Exclude seed only downloads when counting concurrent active
-  downloads (See :option:`-j` option).  This means that if ``-j3`` is
-  given and this option is turned on and 3 downloads are active and
-  one of those enters seed mode, then it is excluded from active
-  download count (thus it becomes 2), and the next download waiting in
-  queue gets started. But be aware that seeding item is still
-  recognized as active download in RPC method.  Default: ``false``
+  计算并发活动下载时，排除掉仅包含种子的下载（请参阅 :option:`-j` 选项）。
+  这意味着如果给出 ``-j3`` 并且打开了此选项，有3个下载处于活动状态且其中一个进入种子模式，
+  则将其从活动下载计数中排除（因此变为2），并且开始等待队列中的下一个下载。
+  但是请注意，在RPC方法中，种子项仍被视为活动下载。
+  默认值： ``false``
 
 .. option:: --bt-enable-hook-after-hash-check [true|false]
 
